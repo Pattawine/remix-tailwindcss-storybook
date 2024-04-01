@@ -6,6 +6,8 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
+import "./tailwind.css";
+
 export default function App() {
   return (
     <html lang="en">
@@ -17,7 +19,7 @@ export default function App() {
       </head>
       <body>
         <div id="sidebar">
-          <h1>Remix Contacts</h1>
+          <h1 className="bg-blue-300 p-4">Remix Contacts</h1>
           <div>
             <Form id="search-form" role="search">
               <input
