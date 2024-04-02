@@ -5,8 +5,14 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-
-import "./tailwind.css";
+import { Button } from './components/ui/button'
+import styles from './tailwind.css'
+import { cssBundleHref } from '@remix-run/css-bundle'
+import type { LinksFunction, LoaderFunctionArgs } from '@vercel/remix'
+export const links: LinksFunction = () => [
+  { rel: 'stylesheet', href: styles },
+  ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
+]
 
 export default function App() {
   return (
@@ -20,6 +26,9 @@ export default function App() {
       <body>
         <div id="sidebar">
           <h1 className="bg-blue-300 p-4">Remix Contacts</h1>
+          <Button className="text-xl" asChild>
+            <a href={'/'}>Return Home</a>
+          </Button>
           <div>
             <Form id="search-form" role="search">
               <input

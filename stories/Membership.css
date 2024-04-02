@@ -1,0 +1,8 @@
+.md-none{
+    display: none;
+}
+@media (max-width: 768px) { /* ขนาดหน้าจอสำหรับ Mobile */
+    .md-none{
+        display: block;
+    }
+}
